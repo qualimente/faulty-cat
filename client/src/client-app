@@ -1,0 +1,6 @@
+#!/bin/sh
+
+while true; do 
+  echo "${HOSTNAME}" | nc -w 1 server 4242
+  sleep 1
+done;

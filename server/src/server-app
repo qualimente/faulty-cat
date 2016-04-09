@@ -34,5 +34,5 @@ port="4242"
 echo "starting server on ${port}"
 
 while true; do 
-  nc -l -p ${port} -v -k
+  nc -l -p ${port} -vv -k -q 60
 done;

@@ -1,6 +1,8 @@
 #!/bin/sh
 
-while true; do 
-  echo "${HOSTNAME}" | nc -w 1 server 4242
+while true; do
+  msg="$(date '+%Y-%m-%d %H:%M:%S') hello from ${HOSTNAME}"
+  echo ${msg}
+  echo ${msg} | nc -vv -w 1 server 4242
   sleep 1
 done;

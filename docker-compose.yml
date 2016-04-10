@@ -13,8 +13,17 @@ services:
         hostname: server
         networks:
             - faulty-cat
+        pid: host
 
     client:
         build: client
         networks:
             - faulty-cat
+
+    gremlins:
+        image: gremlins
+        networks:
+            - faulty-cat
+        command: gremlins -m gremlins.profiles.faulty_cat -p faulty_cat.profile
+        pid: host
+

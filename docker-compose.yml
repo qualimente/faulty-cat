@@ -22,8 +22,9 @@ services:
 
     gremlins:
         image: gremlins
-        networks:
-            - faulty-cat
         command: gremlins -m gremlins.profiles.faulty_cat -p faulty_cat.profile
+        network_mode: "service:server"
         pid: host
+        cap_add:
+            - NET_ADMIN
 

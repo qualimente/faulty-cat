@@ -21,7 +21,9 @@ services:
             - faulty-cat
 
     gremlins:
-        image: gremlins
+        image: qualimente/gremlins
+        volumes:
+            - ./server/gremlins/profiles:/app/gremlins/profiles
         command: gremlins -m gremlins.profiles.faulty_cat -p faulty_cat.profile
         network_mode: "service:server"
         pid: host

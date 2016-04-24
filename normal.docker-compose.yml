@@ -19,3 +19,5 @@ services:
         build: client
         networks:
             - faulty-cat
+        links:
+            - server

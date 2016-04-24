@@ -13,7 +13,6 @@ services:
         hostname: server
         networks:
             - faulty-cat
-        pid: host
 
     client:
         build: client
